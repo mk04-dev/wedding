@@ -1,0 +1,55 @@
+/* ===================================
+   CSS VARIABLES - PINK PASTEL THEME
+   =================================== */
+
+:root {
+    /* Pink Pastel Colors */
+    --primary-pink: #FFB6C1;
+    --soft-pink: #FFC0CB;
+    --rose-pink: #FFD1DC;
+    --light-pink: #FFE4E8;
+    --pale-pink: #FFF0F3;
+    
+    /* Accent Colors */
+    --accent-gold: #D4AF37;
+    --accent-rose-gold: #B76E79;
+    
+    /* Neutral Colors */
+    --text-dark: #4A4A4A;
+    --text-light: #757575;
+    --white: #FFFFFF;
+    --cream: #FFF8F0;
+    
+    /* Fonts */
+    --font-primary: 'Poppins', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-script: 'Dancing Script', cursive;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Borders - Soft & Rounded */
+    --border-radius: 20px;
+    --border-radius-lg: 30px;
+    --border-color: var(--primary-pink);
+    
+    /* Shadows - Soft */
+    --shadow-sm: 0 4px 12px rgba(255, 182, 193, 0.15);
+    --shadow-md: 0 8px 20px rgba(255, 182, 193, 0.2);
+    --shadow-lg: 0 12px 30px rgba(255, 182, 193, 0.25);
+    --shadow-xl: 0 16px 40px rgba(255, 182, 193, 0.3);
+    
+    /* Transitions - Smooth */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Glassmorphism - Soft */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 182, 193, 0.2);
+    --blur-amount: 10px;
+}
