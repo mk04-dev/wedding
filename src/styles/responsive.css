@@ -4,48 +4,57 @@
 
 /* Tablets and below */
 @media (max-width: 992px) {
+    .passport-cover {
+        padding: var(--spacing-lg);
+    }
+
     .section-title h2 {
         font-size: 2.5rem;
     }
-    
+
     .passport-title {
         font-size: 2.5rem;
     }
-    
+
     .couple-names {
         font-size: 2.5rem;
-        flex-direction: column;
         gap: var(--spacing-sm);
     }
-    
+
     .timeline::before {
-        left: 30px;
+        left: 26px;
     }
-    
+
     .timeline-item {
         grid-template-columns: auto 1fr;
         gap: var(--spacing-md);
     }
-    
+
     .timeline-item:nth-child(even) .timeline-content {
         grid-column: 2;
     }
-    
+
     .timeline-item:nth-child(even) .timeline-icon {
         grid-column: 1;
     }
-    
+
     .timeline-icon {
         width: 50px;
         height: 50px;
     }
-    
+
     .timeline-icon i {
         font-size: 1.2rem;
     }
-    
-    .gates-container {
+
+    /* Map & Details Section - Mobile 3 rows */
+    .map-details-wrapper {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .map-column {
+        position: static;
     }
 }
 
@@ -55,78 +64,90 @@
         --spacing-xl: 3rem;
         --spacing-lg: 2rem;
     }
-    
+
     .section-title h2 {
         font-size: 2rem;
     }
-    
+
     .section-title i {
         font-size: 2rem;
     }
-    
+
     .passport-cover {
         padding: var(--spacing-md);
     }
-    
+
     .passport-title {
         font-size: 2rem;
         letter-spacing: 0.2rem;
     }
-    
+
     .passport-subtitle {
         font-size: 1rem;
     }
-    
-    .vietnam-map {
-        height: 180px;
-    }
-    
+
     .couple-names {
         font-size: 2rem;
     }
-    
+
     .info-row {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
-    
+
     .flight-route {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
-    
+
     .route-line {
         width: 100%;
         margin: var(--spacing-md) 0;
     }
-    
+
     .bride-name-formal,
     .groom-name-formal {
         font-size: 2rem;
     }
-    
+
     .boarding-pass-header {
         flex-direction: column;
         gap: var(--spacing-sm);
         text-align: center;
     }
-    
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .vietnam-map-container {
-        height: 400px;
+        height: 500px;
+        max-height: 70vh;
+        margin: auto;
     }
-    
+
+    .qrcode-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .qr-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+
+    .qr-placeholder i {
+        font-size: 4.5rem;
+    }
+
     .gate-number {
         font-size: 1.5rem;
     }
-    
+
     .footer-title {
         font-size: 1.5rem;
     }
-    
+
     .timeline-content h3 {
         font-size: 1.3rem;
     }
@@ -137,43 +158,73 @@
     .container {
         padding: 0 var(--spacing-sm);
     }
-    
+
     .passport-title {
         font-size: 1.5rem;
     }
-    
+
     .couple-names {
         font-size: 1.5rem;
     }
-    
+
     .section-title h2 {
         font-size: 1.8rem;
     }
-    
+
     .bride-name-formal,
     .groom-name-formal {
         font-size: 1.5rem;
     }
-    
+
     .detail-line.large {
         font-size: 1.1rem;
     }
-    
+
     .barcode-text {
         font-size: 0.6rem;
     }
-    
+
     .timeline-icon {
         width: 40px;
         height: 40px;
     }
-    
+
     .timeline-icon i {
         font-size: 1rem;
     }
-    
+
     .gate-body h3 {
         font-size: 1.5rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .vietnam-map-container {
+        height: 400px;
+        max-height: 50vh;
+    }
+
+    .bank-card {
+        padding: var(--spacing-lg);
+    }
+
+    .qr-placeholder {
+        width: 180px;
+        height: 180px;
+    }
+
+    .qr-placeholder i {
+        font-size: 4rem;
+    }
+
+    .bank-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .info-value {
+        font-size: 1rem;
     }
 }
 
@@ -183,7 +234,7 @@
         min-height: auto;
         padding: var(--spacing-lg) 0;
     }
-    
+
     .vietnam-map {
         height: 150px;
     }
@@ -191,11 +242,12 @@
 
 /* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
+
     .map-btn,
     .gallery-item {
         -webkit-tap-highlight-color: transparent;
     }
-    
+
     .map-btn {
         min-height: 44px;
     }
@@ -206,11 +258,11 @@
     .scroll-indicator {
         display: none;
     }
-    
+
     .hero-section {
         page-break-after: always;
     }
-    
+
     .boarding-pass {
         page-break-inside: avoid;
     }

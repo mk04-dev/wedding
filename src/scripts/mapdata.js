@@ -277,7 +277,7 @@ var simplemaps_countrymap_mapdata = {
       lng: "108.759467",
       lat: "15.115542",
       type: "heart",
-      size: "50",
+      size: "40",
       name: "Nhà gái",
       description: "Nghĩa Kỳ, Tư Nghĩa, Quảng Ngãi, Việt Nam",
       url: "https://www.google.com/maps/place/Ngh%C4%A9a+K%E1%BB%B3,+T%C6%B0+Ngh%C4%A9a,+Qu%E1%BA%A3ng+Ng%C3%A3i,+Vi%E1%BB%87t+Nam/@15.1157044,108.7546802,17z/data=!3m1!4b1!4m15!1m8!3m7!1s0x310a36da4e32c475:0x818bf16de4190a08!2zUGjGsOG7nW5nIEFuIEzhuqFjLCBI4buTbmcgTmfhu7EsIMSQ4buTbmcgVGjDoXAsIFZp4buHdCBOYW0!3b1!8m2!3d10.8342679!4d105.3306814!16s%2Fg%2F122_gtn3!3m5!1s0x3169ac555c622a73:0x5a462ad9a63aba57!8m2!3d15.1157045!4d108.7595511!16s%2Fg%2F11c6491m7p?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D",
@@ -289,7 +289,7 @@ var simplemaps_countrymap_mapdata = {
       description: "Thường Lạc, Hồng Ngự, Đồng Tháp",
       url: "https://www.google.com/maps/@10.8118368,105.3362732,55m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D",
       type: "heart",
-      size: "50",
+      size: "40",
     },
   },
   labels: {
@@ -430,7 +430,7 @@ var simplemaps_countrymap_mapdata = {
       parent_id: "VN44",
     },
     VN45: {
-      name: "Ðong Tháp",
+      name: "Đồng Tháp",
       parent_id: "VN45",
     },
     VN46: {
