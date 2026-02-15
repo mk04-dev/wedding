@@ -53,8 +53,8 @@
                 </div>
 
                 <div class="scroll-indicator">
-                    <i class="fas fa-chevron-down"></i>
-                    <span>Vuốt xuống</span>
+                    <i class="fas fa-chevron-up"></i>
+                    <span>Vuốt lên</span>
                 </div>
             </div>
         </div>
@@ -77,34 +77,28 @@
                         <div class="passenger-info">
                             <div class="info-row">
                                 <div class="info-item">
-                                    <label>Nhà gái</label>
-                                    <div class="value">Bà. LÊ THỊ HOA</div>
-                                    <div class="sub-value"></div>
-                                </div>
-                                <div class="info-item">
-                                </div>
-                                <div class="info-item">
-                                    <label>Nhà trai</label>
-                                    <div class="value">Bà. BÙI THỊ GÓP</div>
-                                    <div class="sub-value">Ông. ĐẶNG VĂN LUÔL</div>
-                                </div>
-                            </div>
-
-                            <div class="flight-route">
-                                <div class="route-point">
+                                    <span>Nhà gái</span>
                                     <i class="fas fa-plane-departure"></i>
-                                    <span>Xã Nghĩa Giang<br>Quảng Ngãi</span>
+                                    <div class="value">Bà. LÊ THỊ HOA</div>
+                                    <div class="sub-value" style="visibility: hidden;">A</div>
+                                    <div class="sub-value">
+                                        Xã Nghĩa Giang, Quảng Ngãi
+                                    </div>
                                 </div>
                                 <div class="route-line">
                                     <div class="dotted-line"></div>
                                     <i class="fas fa-heart heart-middle"></i>
                                 </div>
-                                <div class="route-point">
+                                <div class="info-item">
+                                    <span>Nhà trai</span>
                                     <i class="fas fa-plane-arrival"></i>
-                                    <span>Phường Thường Lạc<br>Đồng Tháp</span>
+                                    <div class="value">Bà. BÙI THỊ GÓP</div>
+                                    <div class="sub-value">Ông. ĐẶNG VĂN LUÔL</div>
+                                    <div class="sub-value">
+                                        Phường Thường Lạc, Đồng Tháp
+                                    </div>
                                 </div>
                             </div>
-
                             <div class="invitation-text">
                                 TRÂN TRỌNG BÁO TIN LỄ VU QUY CỦA CON CHÚNG TÔI
                             </div>
@@ -163,34 +157,28 @@
                         <div class="passenger-info">
                             <div class="info-row">
                                 <div class="info-item">
-                                    <label>Nhà trai</label>
+                                    <span>Nhà trai</span>
+                                    <i class="fas fa-plane-departure"></i>
                                     <div class="value">Bà. BÙI THỊ GÓP</div>
                                     <div class="sub-value">Ông. ĐẶNG VĂN LUÔL</div>
-                                </div>
-                                <div class="info-item">
-                                </div>
-                                <div class="info-item">
-                                    <label>Nhà gái</label>
-                                    <div class="value">Bà. LÊ THỊ HOA</div>
-                                    <div class="sub-value"></div>
-                                </div>
-                            </div>
-
-                            <div class="flight-route">
-                                <div class="route-point">
-                                    <i class="fas fa-plane-arrival"></i>
-                                    <span>Phường Thường Lạc<br>Đồng Tháp</span>
+                                    <div class="sub-value">
+                                        Phường Thường Lạc, Đồng Tháp
+                                    </div>
                                 </div>
                                 <div class="route-line">
                                     <div class="dotted-line"></div>
                                     <i class="fas fa-heart heart-middle"></i>
                                 </div>
-                                <div class="route-point">
-                                    <i class="fas fa-plane-departure"></i>
-                                    <span>Xã Nghĩa Giang<br>Quảng Ngãi</span>
+                                <div class="info-item">
+                                    <span>Nhà gái</span>
+                                    <i class="fas fa-plane-arrival"></i>
+                                    <div class="value">Bà. LÊ THỊ HOA</div>
+                                    <div class="sub-value" style="visibility: hidden;"> A</div>
+                                    <div class="sub-value">
+                                        Xã Nghĩa Giang, Quảng Ngãi
+                                    </div>
                                 </div>
                             </div>
-
                             <div class="invitation-text">
                                 TRÂN TRỌNG BÁO TIN LỄ TÂN HÔN CỦA CON CHÚNG TÔI
                             </div>
@@ -300,109 +288,8 @@
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-date">Final Destination</div>
-                        <h3>Đám cưới - 09/03/2026</h3>
+                        <h3>Vu quy - 09/03/2026 & Tân hôn - 21/03/2026</h3>
                         <p>Và giờ đây, chúng tôi sẵn sàng cho chuyến bay trọn đời!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map & Details Combined Section -->
-    <section id="details" class="map-details-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <i class="fas fa-map-marked-alt"></i>
-                <h2>Flight Schedule</h2>
-                <p>Thông tin các chuyến bay</p>
-            </div>
-
-            <div class="map-details-wrapper">
-                <!-- Left: Map -->
-                <div class="map-column" data-aos="fade-right">
-                    <div id="map" class="vietnam-map-container"></div>
-                </div>
-
-                <!-- Right: Gates -->
-                <div class="gates-column">
-                    <!-- Gate A - Nhà Gái -->
-                    <div class="gate-card" data-aos="fade-left" data-aos-delay="100">
-                        <div class="gate-header">
-                            <div class="gate-number">Lễ Vu quy</div>
-                            <div class="gate-status">
-                                <i class="fas fa-check-circle"></i>
-                                <span>On Time</span>
-                            </div>
-                        </div>
-
-                        <div class="gate-body">
-                            <h3>Tư gia nhà gái</h3>
-                            <div class="gate-info">
-                                <div class="info-line">
-                                    <i class="fas fa-clock"></i>
-                                    <span><strong>Vào lúc:</strong> 16:05</span>
-                                </div>
-                                <div class="info-line">
-                                    <i class="fas fa-calendar"></i>
-                                    <span><strong>Ngày:</strong> Thứ hai, 09/03/2026</span>
-                                </div>
-                                <div class="info-line lunar">
-                                    <i class="fas fa-moon"></i>
-                                    <span>Nhằm ngày 21 tháng 01 Âm lịch - Bính Ngọ</span>
-                                </div>
-                                <div class="info-line">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span><strong>Địa điểm:</strong> Cạnh Cổng Chùa An Hội, Thôn An Hội Nam 1, Xã Nghĩa
-                                        Giang, Tỉnh Quảng Ngãi</span>
-                                </div>
-                            </div>
-
-                            <a href="https://maps.google.com/?q=Xã Nghĩa Giang, Quảng Ngãi" target="_blank"
-                                class="map-btn">
-                                <i class="fas fa-directions"></i>
-                                Chỉ đường
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Gate B - Nhà Trai -->
-                    <div class="gate-card" data-aos="fade-left" data-aos-delay="200">
-                        <div class="gate-header">
-                            <div class="gate-number">Lễ Tân hôn</div>
-                            <div class="gate-status">
-                                <i class="fas fa-check-circle"></i>
-                                <span>On Time</span>
-                            </div>
-                        </div>
-
-                        <div class="gate-body">
-                            <h3>GALA ROYALE The Event Hall</h3>
-                            <div class="gate-info">
-                                <div class="info-line">
-                                    <i class="fas fa-clock"></i>
-                                    <span><strong>Vào lúc:</strong> 11:00</span>
-                                </div>
-                                <div class="info-line">
-                                    <i class="fas fa-calendar"></i>
-                                    <span><strong>Ngày:</strong> Thứ bảy, 21/03/2026</span>
-                                </div>
-                                <div class="info-line lunar">
-                                    <i class="fas fa-moon"></i>
-                                    <span>Nhằm ngày 03 tháng 02 Âm lịch - Bính Ngọ</span>
-                                </div>
-                                <div class="info-line">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span><strong>Địa điểm:</strong> Sảnh Diamond - Lầu 04, 63 Mạc Đỉnh Chi, Phường Tân
-                                        Định, TP. Hồ Chí Minh</span>
-                                </div>
-                            </div>
-
-                            <a href="https://maps.google.com/?q=63 Mạc Đỉnh Chi, Phường Tân Định, TP. Hồ Chí Minh"
-                                target="_blank" class="map-btn">
-                                <i class="fas fa-directions"></i>
-                                Chỉ đường
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -479,6 +366,109 @@
         </div>
     </section>
 
+    <!-- Map & Details Combined Section -->
+    <section id="details" class="map-details-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <i class="fas fa-map-marked-alt"></i>
+                <h2>Flight Schedule</h2>
+                <p>Thông tin các chuyến bay</p>
+            </div>
+
+            <div class="map-details-wrapper">
+                <!-- Left: Map -->
+                <div class="map-column" data-aos="fade-right">
+                    <div id="map" class="vietnam-map-container"></div>
+                </div>
+
+                <!-- Right: Gates -->
+                <div class="gates-column">
+                    <!-- Gate A - Nhà Gái -->
+                    <div class="gate-card" data-aos="fade-left" data-aos-delay="100"
+                        data-event-time="2026-03-09T16:05:00">
+                        <div class="gate-header">
+                            <div class="gate-number">Lễ Vu quy</div>
+                            <div class="gate-status" data-status-target="bride">
+                                <i class="fas fa-clock"></i>
+                                <span>Upcoming</span>
+                            </div>
+                        </div>
+
+                        <div class="gate-body">
+                            <h3>Tư gia nhà gái</h3>
+                            <div class="gate-info">
+                                <div class="info-line">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Vào lúc:</strong> 16:05</span>
+                                </div>
+                                <div class="info-line">
+                                    <i class="fas fa-calendar"></i>
+                                    <span><strong>Ngày:</strong> Thứ hai, 09/03/2026</span>
+                                </div>
+                                <div class="info-line lunar">
+                                    <i class="fas fa-moon"></i>
+                                    <span>Nhằm ngày 21 tháng 01 Âm lịch - Bính Ngọ</span>
+                                </div>
+                                <div class="info-line">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span><strong>Địa điểm:</strong> Cạnh Cổng Chùa An Hội, Thôn An Hội Nam 1, Xã Nghĩa
+                                        Giang, Tỉnh Quảng Ngãi</span>
+                                </div>
+                            </div>
+
+                            <a href="https://maps.google.com/?q=Xã Nghĩa Giang, Quảng Ngãi" target="_blank"
+                                class="map-btn">
+                                <i class="fas fa-directions"></i>
+                                Chỉ đường
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Gate B - Nhà Trai -->
+                    <div class="gate-card" data-aos="fade-left" data-aos-delay="200"
+                        data-event-time="2026-03-21T11:00:00">
+                        <div class="gate-header">
+                            <div class="gate-number">Lễ Tân hôn</div>
+                            <div class="gate-status" data-status-target="groom">
+                                <i class="fas fa-clock"></i>
+                                <span>Upcoming</span>
+                            </div>
+                        </div>
+
+                        <div class="gate-body">
+                            <h3>GALA ROYALE The Event Hall</h3>
+                            <div class="gate-info">
+                                <div class="info-line">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Vào lúc:</strong> 11:00</span>
+                                </div>
+                                <div class="info-line">
+                                    <i class="fas fa-calendar"></i>
+                                    <span><strong>Ngày:</strong> Thứ bảy, 21/03/2026</span>
+                                </div>
+                                <div class="info-line lunar">
+                                    <i class="fas fa-moon"></i>
+                                    <span>Nhằm ngày 03 tháng 02 Âm lịch - Bính Ngọ</span>
+                                </div>
+                                <div class="info-line">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span><strong>Địa điểm:</strong> Sảnh Diamond - Lầu 04, 63 Mạc Đĩnh Chi, Phường Tân
+                                        Định, TP. Hồ Chí Minh</span>
+                                </div>
+                            </div>
+
+                            <a href="https://maps.google.com/?q=63 Mạc Đĩnh Chi, Phường Tân Định, TP. Hồ Chí Minh"
+                                target="_blank" class="map-btn">
+                                <i class="fas fa-directions"></i>
+                                Chỉ đường
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- QR Code Section -->
     <section id="qrcode" class="qrcode-section">
         <div class="container">
@@ -495,26 +485,26 @@
                         <i class="fas fa-heart"></i>
                         <h3>Cô Dâu</h3>
                     </div>
-                    
+
                     <div class="qrcode-image">
                         <!-- Placeholder - replace with actual QR code -->
                         <div class="qr-placeholder">
                             <img src="./images/QR/bride.webp" height="100%" alt="QR Code Cô Dâu">
                         </div>
                     </div>
-                    
+
                     <div class="bank-info">
-                        <div class="info-row">
-                            <span class="info-label">Chủ tài khoản:</span>
-                            <span class="info-value">NGUYEN THI LE NA</span>
+                        <div class="bank-info-row">
+                            <span class="bank-label">Chủ tài khoản:</span>
+                            <span class="bank-value">NGUYEN THI LE NA</span>
                         </div>
-                        <div class="info-row">
-                            <span class="info-label">Số tài khoản:</span>
-                            <span class="info-value">4591234567899</span>
+                        <div class="bank-info-row">
+                            <span class="bank-label">Số tài khoản:</span>
+                            <span class="bank-value">4591234567899</span>
                         </div>
-                        <div class="info-row">
-                            <span class="info-label">Ngân hàng:</span>
-                            <span class="info-value">MB bank</span>
+                        <div class="bank-info-row">
+                            <span class="bank-label">Ngân hàng:</span>
+                            <span class="bank-value">MB bank</span>
                         </div>
                     </div>
                 </div>
@@ -525,26 +515,26 @@
                         <i class="fas fa-heart"></i>
                         <h3>Chú Rể</h3>
                     </div>
-                    
+
                     <div class="qrcode-image">
                         <!-- Placeholder - replace with actual QR code -->
                         <div class="qr-placeholder">
                             <img src="./images/QR/groom.webp" height="100%" alt="QR Code Chú Rể">
                         </div>
                     </div>
-                    
+
                     <div class="bank-info">
-                        <div class="info-row">
-                            <span class="info-label">Chủ tài khoản:</span>
-                            <span class="info-value">DANG TUAN ANH</span>
+                        <div class="bank-info-row">
+                            <span class="bank-label">Chủ tài khoản:</span>
+                            <span class="bank-value">DANG TUAN ANH</span>
                         </div>
-                        <div class="info-row">
-                            <span class="info-label">Số tài khoản:</span>
-                            <span class="info-value">0868737308</span>
+                        <div class="bank-info-row">
+                            <span class="bank-label">Số tài khoản:</span>
+                            <span class="bank-value">0868737308</span>
                         </div>
-                        <div class="info-row">
-                            <span class="info-label">Ngân hàng:</span>
-                            <span class="info-value">MB bank</span>
+                        <div class="bank-info-row">
+                            <span class="bank-label">Ngân hàng:</span>
+                            <span class="bank-value">MB bank</span>
                         </div>
                     </div>
                 </div>
@@ -574,6 +564,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="./music/Background_Music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Control Button -->
+    <button id="music-toggle" class="music-toggle" aria-label="Toggle Music">
+        <i class="fas fa-music"></i>
+    </button>
 
     <!-- Scripts -->
     <script type="module" src="./scripts/main.js"></script>

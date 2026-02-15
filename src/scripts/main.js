@@ -34,9 +34,9 @@ L.Marker.prototype.options.icon = DefaultIcon;
 document.addEventListener("DOMContentLoaded", function () {
   const search = new URLSearchParams(window.location.search);
   const type =
-    search.get("type") ?? window.sessionStorage.getItem("showBridePass");
+    search.get("type") ?? window.sessionStorage.getItem("type");
 
-  if (type === "groom") {
+  if (type === "bride") {
     window.sessionStorage.setItem("type", "bride");
     const bridePass = document.getElementById("boarding-pass-bride");
     if (bridePass) {
@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initCountdown(type === "groom");
   initGallery();
   initSmoothScroll();
+  updateGateStatus();
+  initBackgroundMusic();
 });
 
 // ===================================
@@ -164,6 +166,65 @@ function initGallery() {
 }
 
 // ===================================
+// GATE STATUS UPDATER
+// ===================================
+
+function updateGateStatus() {
+  const now = new Date();
+  const gateCards = document.querySelectorAll('[data-event-time]');
+  
+  gateCards.forEach(card => {
+    const eventTime = new Date(card.getAttribute('data-event-time'));
+    const statusElement = card.querySelector('.gate-status');
+    
+    if (!statusElement) return;
+    
+    const icon = statusElement.querySelector('i');
+    const text = statusElement.querySelector('span');
+    
+    // Calculate time difference in milliseconds
+    const timeDiff = eventTime - now;
+    const hoursDiff = timeDiff / (1000 * 60 * 60);
+    const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
+    
+    // Remove all status classes
+    statusElement.classList.remove('status-upcoming', 'status-soon', 'status-today', 'status-boarding', 'status-completed');
+    
+    if (timeDiff < 0) {
+      // Event has passed
+      icon.className = 'fas fa-check-circle';
+      text.textContent = 'Hạ cánh thành công';
+      statusElement.classList.add('status-completed');
+    } else if (hoursDiff <= 2) {
+      // Within 2 hours - Boarding
+      icon.className = 'fas fa-plane';
+      text.textContent = 'Trên đường bay';
+      statusElement.classList.add('status-boarding');
+    } else if (daysDiff < 1) {
+      // Today but not within 2 hours
+      icon.className = 'fas fa-plane-departure';
+      text.textContent = 'Đang làm thủ tục';
+      statusElement.classList.add('status-today');
+    } else if (daysDiff <= 7) {
+      // Within 7 days
+      icon.className = 'fas fa-calendar-check';
+      text.textContent = 'Gần rồi';
+      statusElement.classList.add('status-soon');
+    } else {
+      // More than 7 days away
+      icon.className = 'fas fa-clock';
+      text.textContent = 'Sắp tới';
+      statusElement.classList.add('status-upcoming');
+    }
+  });
+  
+  // Update every minute
+  setInterval(() => {
+    updateGateStatus();
+  }, 60000);
+}
+
+// ===================================
 // SMOOTH SCROLL
 // ===================================
 
@@ -207,3 +268,62 @@ window.addEventListener("scroll", () => {
     hero.style.transform = `translateY(${scrolled * 0.5}px)`;
   }
 });
+
+// ===================================
+// BACKGROUND MUSIC
+// ===================================
+
+function initBackgroundMusic() {
+  const audio = document.getElementById("bg-music");
+  const toggleBtn = document.getElementById("music-toggle");
+  
+  if (!audio || !toggleBtn) return;
+  
+  let isPlaying = false;
+  
+  // Try to autoplay (browsers may block this)
+  const playPromise = audio.play();
+  
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        isPlaying = true;
+        toggleBtn.classList.add("playing");
+      })
+      .catch((error) => {
+        // Autoplay was prevented
+        console.log("Autoplay prevented:", error);
+        isPlaying = false;
+        toggleBtn.classList.remove("playing");
+      });
+  }
+  
+  // Toggle music on button click
+  toggleBtn.addEventListener("click", () => {
+    if (isPlaying) {
+      audio.pause();
+      toggleBtn.classList.remove("playing");
+      isPlaying = false;
+    } else {
+      audio.play()
+        .then(() => {
+          toggleBtn.classList.add("playing");
+          isPlaying = true;
+        })
+        .catch((error) => {
+          console.error("Error playing audio:", error);
+        });
+    }
+  });
+  
+  // Update state when audio ends or errors
+  audio.addEventListener("ended", () => {
+    toggleBtn.classList.remove("playing");
+    isPlaying = false;
+  });
+  
+  audio.addEventListener("error", () => {
+    console.error("Error loading audio file");
+    toggleBtn.style.display = "none"; // Hide button if audio fails to load
+  });
+}

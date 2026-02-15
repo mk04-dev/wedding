@@ -223,8 +223,13 @@
         font-size: 1.5rem;
     }
 
-    .info-value {
+    .bank-value {
         font-size: 1rem;
+    }
+
+    .bank-info-row {
+        grid-template-columns: 120px 1fr;
+        gap: var(--spacing-sm);
     }
 }
 
