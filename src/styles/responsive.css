@@ -151,6 +151,17 @@
     .timeline-content h3 {
         font-size: 1.3rem;
     }
+
+    .music-toggle {
+        top: 20px;
+        right: 20px;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .music-toggle i {
+        font-size: 1rem;
+    }
 }
 
 /* Small mobile devices */
@@ -230,6 +241,18 @@
     .bank-info-row {
         grid-template-columns: 120px 1fr;
         gap: var(--spacing-sm);
+    }
+
+    
+    .music-toggle {
+        top: 20px;
+        right: 20px;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .music-toggle i {
+        font-size: 1rem;
     }
 }
 

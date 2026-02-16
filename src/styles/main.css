@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -68,27 +69,6 @@ body {
     position: relative;
     overflow: hidden;
     padding: var(--spacing-sm) 0;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-    animation: rotate 25s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .passport-cover {
@@ -338,6 +318,9 @@ body {
     gap: var(--spacing-md);
     padding: var(--spacing-sm) var(--spacing-lg);
     border-bottom: 1px solid var(--light-pink);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .info-item {
@@ -1074,15 +1057,6 @@ body {
     text-align: left;
 }
 
-.info-row {
-    display: flex;
-    gap: var(--spacing-xs);
-      padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--cream);
-    align-items: center;
-    justify-content: center;
-}
-
 .bank-info-row {
     display: grid;
     grid-template-columns: 140px 1fr;
@@ -1213,8 +1187,8 @@ body {
     position: fixed;
     top: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-pink), var(--soft-pink));
     border: none;
@@ -1268,22 +1242,8 @@ body {
     content: '';
     position: absolute;
     width: 2px;
-    height: 30px;
+    height: 100%;
     background: var(--white);
     transform: rotate(45deg);
     opacity: 0.8;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .music-toggle {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .music-toggle i {
-        font-size: 1.2rem;
-    }
 }
