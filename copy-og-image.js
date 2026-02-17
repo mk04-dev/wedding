@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-// Copy OG image to dist root after build with a fixed name (no hash)
-const sourceFile = path.join(__dirname, 'src', 'images', 'gallery', 'compressed_1771141398259.webp');
-const destFile = path.join(__dirname, 'dist', 'og-image.webp');
+// Copy preview image to dist root after build with a fixed name (no hash)
+const sourceFile = path.join(__dirname, 'src', 'images', 'gallery', 'preview-image.jpg');
+const destFile = path.join(__dirname, 'dist', 'preview-image.jpg');
 
 try {
   // Check if dist directory exists
@@ -15,12 +15,12 @@ try {
   // Copy the file with fixed name
   if (fs.existsSync(sourceFile)) {
     fs.copyFileSync(sourceFile, destFile);
-    console.log('✓ OG image copied to dist/og-image.webp');
-    console.log('✓ Image URL will be: https://wedding-delta-ruby.vercel.app/og-image.webp');
+    console.log('✓ Preview image copied to dist/preview-image.jpg');
+    console.log('✓ Image URL will be: https://wedding-delta-ruby.vercel.app/preview-image.jpg');
   } else {
-    console.warn('⚠ Source OG image not found at:', sourceFile);
+    console.warn('⚠ Source preview image not found at:', sourceFile);
   }
 } catch (error) {
-  console.error('❌ Error copying OG image:', error.message);
+  console.error('❌ Error copying preview image:', error.message);
   process.exit(1);
 }

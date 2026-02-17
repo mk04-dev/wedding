@@ -4,7 +4,7 @@
   "description": "Wedding website with pink pastel passport theme for Lê Na & Tuấn Anh - March 9, 2026",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./ && node copy-og-image.js",
+    "build": "parcel build src/index.html --public-url ./",
     "clean": "rimraf dist .parcel-cache",
     "deploy": "vercel --prod"
   },
