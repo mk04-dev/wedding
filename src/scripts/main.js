@@ -1,6 +1,5 @@
 // Import libraries
-import AOS from "aos";
-import "aos/dist/aos.css";
+// AOS removed - using custom scroll animations
 // FlipDown will be loaded via CDN in HTML
 // import FlipDownConstructor from 'flipdown';
 import "flipdown/dist/flipdown.css";
@@ -8,24 +7,6 @@ import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
 import Swiper from "swiper/swiper-bundle.mjs";
 import "swiper/swiper-bundle.css";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-
-// Fix Leaflet default marker icons path issue with Parcel
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
-
-let DefaultIcon = L.icon({
-  iconUrl: icon,
-  iconRetinaUrl: iconRetina,
-  shadowUrl: iconShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-L.Marker.prototype.options.icon = DefaultIcon;
 
 // ===================================
 // INITIALIZATION
@@ -49,24 +30,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  initAOS();
+  initScrollAnimations();
   initCountdown(type === "groom");
   initGallery();
   initSmoothScroll();
   updateGateStatus();
   initBackgroundMusic();
+  initQRDownload();
 });
 
 // ===================================
-// AOS (Animate On Scroll)
+// CUSTOM SCROLL ANIMATIONS
 // ===================================
 
-function initAOS() {
-  AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100,
-    easing: "ease-in-out",
+function initScrollAnimations() {
+  // Tất cả nội dung đã được load, chỉ cần ẩn/hiện khi scroll
+  const animatedElements = document.querySelectorAll('[data-aos]');
+  
+  if (!animatedElements.length) return;
+  
+  // Intersection Observer để phát hiện khi element vào viewport
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.05 // Trigger khi 5% element hiện ra
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Thêm class để trigger animation
+        entry.target.classList.add('aos-animate');
+        // Không observe nữa sau khi đã animate (once: true)
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  // Observe tất cả elements có data-aos
+  animatedElements.forEach(el => {
+    // Thêm class init để apply style ẩn ban đầu
+    el.classList.add('aos-init');
+    observer.observe(el);
   });
 }
 
@@ -262,14 +267,14 @@ if (scrollIndicator) {
 }
 
 // ===================================
-// PARALLAX EFFECT FOR HERO
+// PARALLAX EFFECT FOR hello
 // ===================================
 
 window.addEventListener("scroll", () => {
   const scrolled = window.pageYOffset;
-  const hero = document.querySelector(".hero-section");
-  if (hero) {
-    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+  const hello = document.querySelector(".hello-section");
+  if (hello) {
+    hello.style.transform = `translateY(${scrolled * 0.5}px)`;
   }
 });
 
@@ -339,5 +344,41 @@ function initBackgroundMusic() {
   audio.addEventListener("error", () => {
     console.error("Error loading audio file");
     toggleBtn.style.display = "none"; // Hide button if audio fails to load
+  });
+}
+
+// ===================================
+// QR CODE DOWNLOAD
+// ===================================
+
+function initQRDownload() {
+  const downloadButtons = document.querySelectorAll('.qr-download-btn');
+  
+  downloadButtons.forEach(button => {
+    button.addEventListener('click', async function() {
+      const qrSrc = this.getAttribute('data-qr-src');
+      const qrName = this.getAttribute('data-qr-name');
+      
+      try {
+        // Fetch the image
+        const response = await fetch(qrSrc);
+        const blob = await response.blob();
+        
+        // Create download link
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = qrName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Clean up
+        window.URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error('Error downloading QR code:', error);
+        alert('Không thể tải xuống QR code. Vui lòng thử lại.');
+      }
+    });
   });
 }

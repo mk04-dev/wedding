@@ -57,10 +57,10 @@ body {
 }
 
 /* ===================================
-   HERO SECTION - PASSPORT COVER
+   HELLO SECTION - PASSPORT COVER
    =================================== */
 
-.hero-section {
+.hello-section {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -72,6 +72,9 @@ body {
 }
 
 .passport-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: rgba(255, 209, 220, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -147,11 +150,11 @@ body {
     }
 
     40% {
-        transform: translate(-4px, 97px) rotate(130deg);
+        transform: translate(-8px, 95px) rotate(130deg);
     }
 
     50% {
-        transform: translate(-4px, 97px) rotate(-46deg);
+        transform: translate(-8px, 95px) rotate(-46deg);
     }
 
     90% {
@@ -317,7 +320,6 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     gap: var(--spacing-md);
     padding: var(--spacing-sm) var(--spacing-lg);
-    border-bottom: 1px solid var(--light-pink);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -369,6 +371,7 @@ body {
 .route-line {
     position: relative;
     width: 100px;
+    justify-self: center;
 }
 
 .dotted-line {
@@ -652,45 +655,16 @@ body {
 }
 
 .map-details-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
-    align-items: start;
-}
-
-.map-column {
-    position: sticky;
-    top: 20px;
-}
-
-.vietnam-map-container {
-    width: 100%;
-    max-width: 100%;
-    height: calc(100vh - 40px);
-    /* max-height: 600px; */
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-xl);
-    overflow: hidden;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-/* Ensure map SVG fits within container */
-#map svg,
-#map canvas,
-#map_holder,
-#map_inner {
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: 100% !important;
-    height: 100% !important;
-}
-
 .gates-column {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
+    width: 100%;
+    max-width: 1200px;
 }
 
 .gate-card {
@@ -1110,6 +1084,39 @@ body {
     margin: 0;
 }
 
+/* QR Download Button */
+.qr-download-btn {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--primary-pink), var(--soft-pink));
+    color: var(--white);
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.qr-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--soft-pink), var(--primary-pink));
+}
+
+.qr-download-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.qr-download-btn i {
+    font-size: 1.1rem;
+}
+
 /* ===================================
    FOOTER SECTION
    =================================== */
@@ -1175,8 +1182,26 @@ body {
 }
 
 .flipdown .rotor {
-    background-color: rgb(184, 0, 31);
+    background-color: var(--accent-rose-gold);
     border-radius: 8px;
+}
+
+/* Rotor leaf colors */
+
+.flipdown .rotor-leaf-front {
+    background-color: var(--accent-rose-gold) !important;
+}
+
+.flipdown .rotor-leaf-rear {
+    background-color: var(--primary-pink) !important;
+}
+
+.flipdown .rotor-top {
+    background-color: var(--accent-rose-gold) !important;
+}
+
+.flipdown .rotor-bottom {
+    background-color: var(--primary-pink) !important;
 }
 
 /* ===================================
@@ -1246,4 +1271,64 @@ body {
     background: var(--white);
     transform: rotate(45deg);
     opacity: 0.8;
+}
+
+/* ===================================
+   CUSTOM SCROLL ANIMATIONS
+   =================================== */
+
+/* Tất cả elements đã được load và chiếm không gian, chỉ ẩn opacity */
+[data-aos].aos-init {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+
+/* Khi scroll tới thì hiện ra */
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Fade Up */
+[data-aos="fade-up"].aos-init {
+    transform: translateY(30px);
+}
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+/* Fade Right */
+[data-aos="fade-right"].aos-init {
+    transform: translateX(-30px);
+}
+[data-aos="fade-right"].aos-animate {
+    transform: translateX(0);
+}
+
+/* Fade Left */
+[data-aos="fade-left"].aos-init {
+    transform: translateX(30px);
+}
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
+}
+
+/* Zoom In */
+[data-aos="zoom-in"].aos-init {
+    transform: scale(0.9);
+}
+[data-aos="zoom-in"].aos-animate {
+    transform: scale(1);
+}
+
+/* Delay animations */
+[data-aos][data-aos-delay="100"].aos-init {
+    transition-delay: 0.1s;
+}
+[data-aos][data-aos-delay="200"].aos-init {
+    transition-delay: 0.2s;
+}
+[data-aos][data-aos-delay="300"].aos-init {
+    transition-delay: 0.3s;
 }

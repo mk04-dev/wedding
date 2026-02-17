@@ -47,14 +47,10 @@
         font-size: 1.2rem;
     }
 
-    /* Map & Details Section - Mobile 3 rows */
-    .map-details-wrapper {
+    /* Gates Section - Mobile vertical layout */
+    .gates-column {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
-    }
-
-    .map-column {
-        position: static;
     }
 }
 
@@ -258,7 +254,7 @@
 
 /* Landscape mobile */
 @media (max-height: 600px) and (orientation: landscape) {
-    .hero-section {
+    .hello-section {
         min-height: auto;
         padding: var(--spacing-lg) 0;
     }
@@ -287,7 +283,7 @@
         display: none;
     }
 
-    .hero-section {
+    .hello-section {
         page-break-after: always;
     }
 
