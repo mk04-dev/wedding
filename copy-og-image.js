@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-// Copy preview image to dist root after build with a fixed name (no hash)
+// Copy preview-image.jpg to dist/images/gallery/ to match the URL structure
 const sourceFile = path.join(__dirname, 'src', 'images', 'gallery', 'preview-image.jpg');
-const destFile = path.join(__dirname, 'dist', 'preview-image.jpg');
+const destDir = path.join(__dirname, 'dist', 'images', 'gallery');
+const destFile = path.join(destDir, 'preview-image.jpg');
 
 try {
   // Check if dist directory exists
@@ -12,11 +13,16 @@ try {
     process.exit(0);
   }
   
-  // Copy the file with fixed name
+  // Ensure destination directory exists
+  if (!fs.existsSync(destDir)) {
+    fs.mkdirSync(destDir, { recursive: true });
+  }
+  
+  // Copy the file
   if (fs.existsSync(sourceFile)) {
     fs.copyFileSync(sourceFile, destFile);
-    console.log('✓ Preview image copied to dist/preview-image.jpg');
-    console.log('✓ Image URL will be: https://wedding-delta-ruby.vercel.app/preview-image.jpg');
+    console.log('✓ Preview image copied to dist/images/gallery/preview-image.jpg');
+    console.log('✓ Image URL will be: https://wedding-delta-ruby.vercel.app/images/gallery/preview-image.jpg');
   } else {
     console.warn('⚠ Source preview image not found at:', sourceFile);
   }
