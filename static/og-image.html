@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #FFE4E8 0%, #FFC0CB 50%, #FFB6C1 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        .main-content {
+            text-align: center;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 60px 80px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #4A4A4A;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 80px;
+            font-weight: 700;
+            color: #B76E79;
+            margin: 20px 0;
+            font-family: 'Dancing Script', cursive;
+        }
+        .date {
+            font-size: 36px;
+            color: #757575;
+            margin-top: 20px;
+        }
+        .heart-icon {
+            font-size: 60px;
+            color: #FFB6C1;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts">
+        <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#FFB6C1" opacity="0.3">
+                <path d="M150,100 l-7,-7 C120,70 100,65 80,65 C50,65 30,85 30,115 c0,45 40,70 113,120 C216,185 256,160 256,115 c0,-30 -20,-50 -50,-50 c-20,0 -40,5 -56,28 z" transform="translate(50,50) scale(0.5)"/>
+                <path d="M150,100 l-7,-7 C120,70 100,65 80,65 C50,65 30,85 30,115 c0,45 40,70 113,120 C216,185 256,160 256,115 c0,-30 -20,-50 -50,-50 c-20,0 -40,5 -56,28 z" transform="translate(800,300) scale(0.5)"/>
+                <path d="M150,100 l-7,-7 C120,70 100,65 80,65 C50,65 30,85 30,115 c0,45 40,70 113,120 C216,185 256,160 256,115 c0,-30 -20,-50 -50,-50 c-20,0 -40,5 -56,28 z" transform="translate(900,100) scale(0.5)"/>
+            </g>
+        </svg>
+    </div>
+    <div class="main-content">
+        <div class="title">Wedding Invitation</div>
+        <div class="heart-icon">♥</div>
+        <div class="subtitle">Lê Na & Tuấn Anh</div>
+        <div class="date">09.03.2026 | 21.03.2026</div>
+    </div>
+</body>
+</html>
